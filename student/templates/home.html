@@ -1,0 +1,28 @@
+
+    {%extends "main.html"%}
+    {% block content%}
+    <!-- <a href="/">LOGO</a> -->
+    <h1>hello please welcome to our home page</h1>
+    <a href="/">LOGO</a>
+    <p>am kiash from karatina university please welcome to my portfolio as software developer as flutter for mobliles and django for backend</p>
+<div>
+    <a href="{% url 'student:create-room'%}"> Create room</a>
+ 
+    <div>
+        {% for room in room %}
+        <span>@{{room.host.username}}
+    {{room.topoic.name}}
+        </span><hr>
+
+<h5>{{room.id}}-- <a href="{% url 'student:room-detail' room.id %}">{{room.name}}</a> </h5>
+<hr>
+<form method="POST" action="">
+    {% csrf_token%}
+    {{form}}
+    <input type="submit" value="submit">
+    
+    </form>
+        {%endfor%}
+    </div>
+</div>
+    {% endblock %}

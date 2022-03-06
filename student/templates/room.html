@@ -1,0 +1,15 @@
+{%extends "main.html"%}
+
+
+    {% block content%}
+    
+    <h1>please welcome to class room please</h1>
+    <a href="/">LOGO</a>
+    <div>
+        <div>
+            {% for room in rooms %}
+            <h6>{{room.id}}-- <a href="">{room.name}}</a>></h6>
+            {%endfor%}
+        </div>
+    </div>
+    {% endblock %}
